@@ -6,7 +6,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Rubik+Bubbles&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@900&display=swap');
 
-
+body{
+    background-color: rgba(103, 237, 255, 0.534);
+}
 
 .main {
     position: relative;
@@ -46,6 +48,7 @@ bottom: 63%;
  width: 80%;
  height: 17%;
  text-align: justify;
+ font-family:'Kanit', sans-serif;
  font-size: 65px;
  text-indent: 30px;
  border-radius: 40px;
@@ -182,6 +185,11 @@ height: 64px;
 left: 1.1%;
 }
 
+#numIgual:active{
+color: cadetblue;
+}
+
+
 #numRemove{
     text-align: center;
 width: 80px;
@@ -189,9 +197,17 @@ height: 64px;
 right: 3%;
 }
 
+#numRemove:active{
+    color: brown;
+}
+
 #numZero{ position: relative;
     top: 0.3px;
 
+}
+
+#numZero:active{
+    color:coral;
 }
 
 #operMais:active{
