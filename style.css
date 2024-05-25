@@ -11,18 +11,20 @@ body{
 }
 
 .main {
+
     position: relative;
     top: 45px;
     margin: auto;
     width: 440px;
     height: 500px;
-    background-color: aquamarine;
+    background-color: #7fffd4;
     box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.336);
     border-radius: 20px;
     z-index: 0;
 }
 
 .layoutButton {
+    
     position: relative;
     left:9%;
     top: 27%;
@@ -34,14 +36,19 @@ body{
     z-index: 1;
 }
 
-#layoutButton2 { position: relative;
+#layoutButton2 { 
+    
+    position: relative;
     left: 7%;
 
 }
 
 
 .screen {
+
+    overflow: auto hidden;
     color: white;
+<<<<<<< Updated upstream
  position: relative;
 left: 4%;
 bottom: 63%;
@@ -55,22 +62,56 @@ bottom: 63%;
  box-shadow: 1px 1px 3px 0px #00000056;
  background-color: rgba(40, 151, 171, 0.582);
  z-index: 1;
+=======
+    position: relative;
+    left: 4%;
+    bottom: 63%;
+    width: 80%;
+    height: 17%;
+    text-align: justify;
+    font-size: 65px;
+    text-indent: 30px;
+    border-radius: 40px;
+    box-shadow: 1px 1px 3px 0px #00000056;
+    background-color: rgba(40, 151, 171, 0.582);
+     z-index: 1;
+     
+}
+.delete {
+    color: white;
+    font-size: 16px;
+    font-weight: 100;
+    border-style: none;
+    position: relative;
+    float: right;
+    width: 9%;
+    bottom: 80%;
+    right: 16%;
+    height: 17%;
+    border-radius: 0 40px 40px 0;
+    z-index: 1;
+    background-color: #ba74fbfa;
+    
+
+>>>>>>> Stashed changes
 }
 
 .oper {
+    
     position: relative;
     bottom: 59%;
     left: 78%;
     width: 18%;
     height: 69%;
     border-radius: 12px;
- box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.336);
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.336);
     background-color: #A9AD2D;
     z-index: 1;
     
 }
 
 .button {
+    
     color: rgb(253, 253, 253);
     background-color: #62B371;
     font-family:'Kanit', sans-serif;
@@ -95,7 +136,7 @@ bottom: 63%;
     top: 1%;
 }
 .button:hover{
-background-color: #62b3717c;
+background-color: #3fa552;
 }
 
 
@@ -157,7 +198,7 @@ background-color: #62b3717c;
 }
 
 .buttonOper:hover{
-    background-color: #ba74fbb6;
+    background-color: #9a39f5b9;
 }
 
 
@@ -229,4 +270,28 @@ right: 3%;
 } 
 #nove, #seis, #tres{
 left: 1.1%;
+}
+
+.delete:hover{
+    background-color: #af5cfd;
+}
+
+.delete:active{
+    color: red;
+}
+
+.screen::-webkit-scrollbar-track{
+	/*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+
+	background-color: rgba(40, 151, 171, 0);
+}
+
+.screen::-webkit-scrollbar{
+	background-color:rgba(40, 151, 171, 0);
+}
+
+.screen::-webkit-scrollbar-thumb{
+	background-color: #7fffd443;
+   
+
 }
