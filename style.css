@@ -48,21 +48,6 @@ body{
 
     overflow: auto hidden;
     color: white;
-<<<<<<< Updated upstream
- position: relative;
-left: 4%;
-bottom: 63%;
- width: 80%;
- height: 17%;
- text-align: justify;
- font-family:'Kanit', sans-serif;
- font-size: 65px;
- text-indent: 30px;
- border-radius: 40px;
- box-shadow: 1px 1px 3px 0px #00000056;
- background-color: rgba(40, 151, 171, 0.582);
- z-index: 1;
-=======
     position: relative;
     left: 4%;
     bottom: 63%;
@@ -93,7 +78,6 @@ bottom: 63%;
     background-color: #ba74fbfa;
     
 
->>>>>>> Stashed changes
 }
 
 .oper {
