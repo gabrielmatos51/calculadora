@@ -23,8 +23,4 @@ function calcular()
     {
         document.getElementById('screen').innerHTML = "Nada..."
     }
-<<<<<<< Updated upstream
 }
-=======
-}
->>>>>>> Stashed changes
