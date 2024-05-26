@@ -26,7 +26,7 @@ body{
 .layoutButton {
     
     position: relative;
-    left:9%;
+    left:5%;
     top: 27%;
     width:65%;
     height: 70%;
@@ -46,17 +46,19 @@ body{
 
 .screen {
 
+    border-style: none;
     overflow: auto hidden;
     color: white;
     position: relative;
     left: 4%;
-    bottom: 63%;
-    width: 80%;
-    height: 17%;
-    text-align: justify;
-    font-size: 65px;
+    bottom: 67%;
+    width: 71%;
+    height: 23%;
+    text-align: right;
+    align-content: center;
+    font-size: 15px;
     text-indent: 30px;
-    border-radius: 40px;
+    border-radius: 40px 0 0 40px ;
     box-shadow: 1px 1px 3px 0px #00000056;
     background-color: rgba(40, 151, 171, 0.582);
      z-index: 1;
@@ -70,12 +72,12 @@ body{
     position: relative;
     float: right;
     width: 9%;
-    bottom: 80%;
+    bottom: 90%;
     right: 16%;
-    height: 17%;
+    height: 23%;
     border-radius: 0 40px 40px 0;
     z-index: 1;
-    background-color: #ba74fbfa;
+    background-color: #ba74fbb0;
     
 
 }
@@ -83,13 +85,13 @@ body{
 .oper {
     
     position: relative;
-    bottom: 59%;
-    left: 78%;
+    bottom: 65%;
+    left: 77%;
     width: 18%;
     height: 69%;
     border-radius: 12px;
     box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.336);
-    background-color: #A9AD2D;
+    background-color:#ffc0cb ;
     z-index: 1;
     
 }

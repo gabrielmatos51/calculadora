@@ -25,31 +25,31 @@
         <div class="layoutButton" id="layoutButton">
             <div id="layoutButton2">
 
-                <button class="button" id="sete" onclick="insert('7')" >7</button>
-                <button class="button" id="oito" onclick="insert('8')">8</button>
-                <button class="button" id="nove" onclick="insert('9')">9</button>
-                <button class="button" id="quatro" onclick="insert('4')">4</button>
-                <button class="button" id="cinco" onclick="insert('5')">5</button>
-                <button class="button" id="seis" onclick="insert('6')">6</button>
-                <button class="button" id="um" onclick="insert('1')">1</button>
-                <button class="button" id="dois" onclick="insert('2')">2</button>
+                <button class="button" id="sete"   onclick="insert('7')" >7</button>
+                <button class="button" id="oito"   onclick="insert('8')">8</button>
+                <button class="button" id="nove"   onclick="insert('9')">9</button>
+                <button class="button" id="quatro"    onclick="insert('4')">4</button>
+                <button class="button" id="cinco"   onclick="insert('5')">5</button>
+                <button class="button" id="seis"   onclick="insert('6')">6</button>
+                <button class="button" id="um"   onclick="insert('1')">1</button>
+                <button class="button" id="dois"   onclick="insert('2')">2</button>
                 <button class="button" id="tres" onclick="insert('3')">3</button>
             </div>
             <div id="layoutButton3">
-                <button class="button" id="numRemove" onclick="clean()">C</button>
-                <button class="button" id="numZero"  onclick="insert('0')">0</button>
-                <button class="button" id="numIgual"  onclick="calcular()">=</button>
+                <button class="button" id="numRemove"   onclick="clean()">C</button>
+                <button class="button" id="numZero"    onclick="insert('0')">0</button>
+                <button class="button" id="numIgual" onclick="calcular()">=</button>
             </div>
         </div>
-        <div class="screen" id="screen"><p id="resultado"></p></div>
+        <div class="screen"  oninput="alterSize()" id="screen"><p id="resultado"></p></div>
 
-        <button class="delete" onclick="back()">&#9003;</button>
+        <button class="delete"    onclick="back()">&#9003;</button>
         <div class="oper" id="oper">
             <div id="buttonOper">
                 <button class="buttonOper" id="operMais" onclick="insert('+')">+</button>
-                <button class="buttonOper" id="operMenos" onclick="insert('-')">-</button>
-                <button class="buttonOper" id="operX" onclick="insert('*')">&#215;</button>
-                <button class="buttonOper" id="operDiv" onclick="insert('/')">&#247;</button>
+                <button class="buttonOper" id="operMenos"  onclick="insert('-')">-</button>
+                <button class="buttonOper" id="operX"  onclick="insert('*')">&#215;</button>
+                <button class="buttonOper" id="operDiv"  onclick="insert('/')">&#247;</button>
             </div>
         </div>
     </div>
