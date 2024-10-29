@@ -27,19 +27,20 @@ function calcular()
 
 function alterSize() {
     var screenElement = document.getElementById('screen');
-    var contentLength = screenElement.innerHTML.length;
+    var contentLength = screenElement.textContent.length;
 
+   
     if (contentLength >= 7 && contentLength < 22) {
-        let fontSize = 85 - (contentLength * 3.2);
-        if (fontSize >= 15) {
+        let fontSize = 85 - (contentLength * 2.2);
+        if (fontSize) {
             screenElement.style.fontSize = fontSize + 'px';
         }
-    } else if (contentLength >= 22 && contentLength <= 36) {
-        let fontSize = 85 - (22 * 2.5) - ((contentLength - 22) * 2.8);
-        if (fontSize > 15) {
+    } else if (contentLength >= 22 && contentLength <= 40) {
+        let fontSize = 85 - (22 * 1.5) - ((contentLength - 22) * 2);
+        if (fontSize) {
             screenElement.style.fontSize = fontSize + 'px';
         }
-    } else if (contentLength >= 35  ) {
+    } else if (contentLength >= 40) {
         screenElement.innerHTML = "ERRO: QUANTITY NOT SUPPORTED";
         screenElement.style.fontSize = '30px';
     }
