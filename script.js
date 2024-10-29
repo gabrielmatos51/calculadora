@@ -31,7 +31,7 @@ function alterSize() {
 
     if (contentLength >= 7 && contentLength < 22) {
         let fontSize = 85 - (contentLength * 3.2);
-        if (fontSize > 15) {
+        if (fontSize >= 15) {
             screenElement.style.fontSize = fontSize + 'px';
         }
     } else if (contentLength >= 22 && contentLength <= 36) {
@@ -41,7 +41,7 @@ function alterSize() {
         }
     } else if (contentLength >= 35  ) {
         screenElement.innerHTML = "ERRO: QUANTITY NOT SUPPORTED";
-        screenElement.style.fontSize = '30PX';
+        screenElement.style.fontSize = '30px';
     }
     
     else {
