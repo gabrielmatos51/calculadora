@@ -1,7 +1,7 @@
 function insert(num)
 {
-    var numero = document.getElementById('screen').innerHTML;
-    document.getElementById('screen').innerHTML = numero + num;
+    const numero = document.getElementById('screen').innerText;
+    document.getElementById('screen').innerText = numero + num;
 }
 function clean()
 {
@@ -9,49 +9,46 @@ function clean()
 }
 function back()
 {
-    var resultado = document.getElementById('screen').innerHTML;
+    const resultado = document.getElementById('screen').innerHTML;
     document.getElementById('screen').innerHTML = resultado.substring(0, resultado.length -1);
 }
 function calcular()
 {
-    var resultado = document.getElementById('screen').innerHTML;
+    const resultado = document.getElementById('screen').innerHTML;
     if(resultado)
     {
         document.getElementById('screen').innerHTML = eval(resultado);
     }
     else
     {
-        document.getElementById('screen').innerHTML = "Nada..."
+     alert("Paramentros não definidos...");
     }
 }
 
 function alterSize() {
-    var screenElement = document.getElementById('screen');
-    var contentLength = screenElement.textContent.length;
+    const screenElement = document.getElementById('container');
+    const contentLength = document.getElementById('screen');
 
-   
-    if (contentLength >= 7 && contentLength < 22) {
-        let fontSize = 85 - (contentLength * 2.2);
-        if (fontSize) {
-            screenElement.style.fontSize = fontSize + 'px';
-        }
-    } else if (contentLength >= 22 && contentLength <= 40) {
-        let fontSize = 85 - (22 * 1.5) - ((contentLength - 22) * 2);
-        if (fontSize) {
-            screenElement.style.fontSize = fontSize + 'px';
-        }
-    } else if (contentLength >= 40) {
-        screenElement.innerHTML = "ERRO: QUANTITY NOT SUPPORTED";
-        screenElement.style.fontSize = '30px';
+    for ( let fontSize = 275 ;contentLength.offsetWidth >= screenElement.offsetWidth;fontSize = fontSize * 0.999 ){
+        screenElement.style.fontSize = fontSize + 'px';
+    };
+
+
+}
+    function adjustSize(){
+        const screenElement = document.getElementById('container');
+        screenElement.style.fontSize = 10000 + 'px';
     }
     
-    else {
-        screenElement.style.fontSize = '90px';
-    }
-}
 
-// Initial call to set the font size when the page loads
-alterSize();
+
+//Initial call to set the font size when the page loads
+    alterSize();
+
+
+
+    adjustSize();
+
 
 // Adjust font size on window resize
 window.addEventListener('resize', alterSize);

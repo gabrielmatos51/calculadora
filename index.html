@@ -23,7 +23,8 @@
     <div class="main" id="main">
         
         <div class="layoutButton" id="layoutButton">
-            <div id="layoutButton2">
+            <div class="moreFuntions"></div>
+            <div class="layoutButton2">
 
                 <button class="button" id="sete"   onclick="insert('7')" >7</button>
                 <button class="button" id="oito"   onclick="insert('8')">8</button>
@@ -34,24 +35,28 @@
                 <button class="button" id="um"   onclick="insert('1')">1</button>
                 <button class="button" id="dois"   onclick="insert('2')">2</button>
                 <button class="button" id="tres" onclick="insert('3')">3</button>
-            </div>
-            <div id="layoutButton3">
                 <button class="button" id="numRemove"   onclick="clean()">C</button>
                 <button class="button" id="numZero"    onclick="insert('0')">0</button>
+                 <button class="button" id="tres" onclick="insert(',')">,</button>
                 <button class="button" id="numIgual" onclick="calcular()">=</button>
+               
             </div>
-        </div>
-        <div class="screen"  oninput="alterSize()" id="screen"><p id="resultado"></p></div>
+            <div class="oper" id="oper">
+                    <button class="buttonOper" onmousedown="adjustSize()"  onclick="back()">&#9003;</button>
+                    <button class="buttonOper" id="operMais" onclick="insert('+')">+</button>
+                    <button class="buttonOper" id="operMenos"  onclick="insert('-')">-</button>
+                    <button class="buttonOper" id="operX"  onclick="insert('*')">&#215;</button>
+                    <button class="buttonOper" id="operDiv"  onclick="insert('/')">&#247;</button>
+            </div>
 
-        <button class="delete"    onclick="back()">&#9003;</button>
-        <div class="oper" id="oper">
-            <div id="buttonOper">
-                <button class="buttonOper" id="operMais" onclick="insert('+')">+</button>
-                <button class="buttonOper" id="operMenos"  onclick="insert('-')">-</button>
-                <button class="buttonOper" id="operX"  onclick="insert('*')">&#215;</button>
-                <button class="buttonOper" id="operDiv"  onclick="insert('/')">&#247;</button>
-            </div>
         </div>
+            <div class="flexContainer">  
+                <div class="container" id="container">
+                    <div class="screen" oninput="alterSize()" id='screen'></div>
+                </div>
+            </div>
+       
+       
     </div>
     <script src="script.js"></script>
 </body>

@@ -8,15 +8,15 @@
 
 body{
     background-color: rgba(103, 237, 255, 0.534);
+    height: 100vh;
+    
 }
 
 .main {
-
-    position: relative;
-    top: 45px;
-    margin: auto;
-    width: 440px;
-    height: 500px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
     background-color: #7fffd4;
     box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.336);
     border-radius: 20px;
@@ -24,58 +24,61 @@ body{
 }
 
 .layoutButton {
-    
-    position: relative;
-    left:5%;
-    top: 27%;
-    width:65%;
-    height: 70%;
-    border-radius: 12px;
-   box-shadow: 1px 1px 3px 0px #00000056;
+     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+     width: 100%;
+     height: 55vh;
+    box-shadow: 1px 1px 3px 0px #00000056;
     background-color: #ffc0cb;
     z-index: 1;
 }
 
-#layoutButton2 { 
-    
-    position: relative;
-    left: 7%;
+.moreFuntions{
+    width: 15%;
+}
+
+.layoutButton2 { 
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: repeat(5,auto);
+    width: 69%;
+    gap: 5px;
+    height: 100%;
 
 }
 
+.flexContainer{
+    display: flex;
+    flex-direction: row;
+    order: -1;
+    width: 99.9%;
+    height: 45%;
+}
 
-.screen {
-
+#container{
+    width: 100%;
     border-style: none;
     overflow: auto hidden;
     color: white;
-    position: relative;
-    left: 4%;
-    bottom: 67%;
-    width: 71%;
-    height: 23%;
     text-align: right;
     align-content: center;
-    font-size: 15px;
-    text-indent: 30px;
-    border-radius: 40px 0 0 40px ;
     box-shadow: 1px 1px 3px 0px #00000056;
     background-color: rgba(40, 151, 171, 0.582);
+    overflow-x: hidden;
      z-index: 1;
      
+}
+.screen {
+    display: inline-block;
+    overflow-x: hidden;
+
 }
 .delete {
     color: white;
     font-size: 16px;
     font-weight: 100;
     border-style: none;
-    position: relative;
-    float: right;
-    width: 9%;
-    bottom: 90%;
-    right: 16%;
-    height: 23%;
-    border-radius: 0 40px 40px 0;
     z-index: 1;
     background-color: #ba74fbb0;
     
@@ -83,17 +86,13 @@ body{
 }
 
 .oper {
-    
-    position: relative;
-    bottom: 65%;
-    left: 77%;
-    width: 18%;
-    height: 69%;
-    border-radius: 12px;
+    grid-template-columns: repeat(1,auto);
+    display: grid;
+    gap: 5px;
+    width: 15%;
     box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.336);
     background-color:#ffc0cb ;
     z-index: 1;
-    
 }
 
 .button {
@@ -102,24 +101,16 @@ body{
     background-color: #62B371;
     font-family:'Kanit', sans-serif;
     font-size: 44px;
-    position: relative;
-    margin-top: 11.2px;
-    right: 1%;
-    width: 80px;
-    height: 72px;
     border-radius: 6.8px;
     box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.336);
     border-style: none;
     z-index: 2; 
     
 }
-#layoutButton2{ position: relative;
-    top: 1.5%;
+.layoutButton2{ 
 
 }
-#layoutButton3 {position: relative;
-    left: 7% ;
-    top: 1%;
+.layoutButton3 {
 }
 .button:hover{
 background-color: #3fa552;
@@ -165,10 +156,6 @@ background-color: #3fa552;
     font-family: 'Kanit', sans-serif;
     background-color: #ba74fbfa;
     color: rgb(255, 255, 255);
-    position: relative;
-    left: 12%;
-    width: 75%;
-    height: 20%;
     font-size: 25px;
     border-radius: 6.8px;
     box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0);
@@ -176,10 +163,8 @@ background-color: #3fa552;
     z-index: 2;
 }
 
-#buttonOper {position: relative;
-    top: 5%;
-    width: 100%;
-    height: 100%; 
+#buttonOper {
+    
 
 }
 
@@ -189,39 +174,36 @@ background-color: #3fa552;
 
 
 #operMais {
-    bottom: 4px;
+
 }
 #operMenos {
    
-    top: 10px;
+   
 }
 #operX{
 
-    top: 25px;
+
 }
 
 #operDiv{
   
-    top: 40px;
 }
 
 #numIgual {
+    grid-column-start: 1;
+    grid-column-end: 4;
     text-align: center;
-width: 80px;
-height: 64px;
-left: 1.1%;
+   
 }
 
 #numIgual:active{
-color: cadetblue;
+    color: cadetblue;
 }
 
 
 #numRemove{
     text-align: center;
-width: 80px;
-height: 64px;
-right: 3%;
+
 }
 
 #numRemove:active{
@@ -229,7 +211,7 @@ right: 3%;
 }
 
 #numZero{ position: relative;
-    top: 0.3px;
+  
 
 }
 
@@ -252,10 +234,10 @@ right: 3%;
 color:#3FE33D;
 }
 #sete, #quatro, #um {
-right: 3%;
+
 } 
 #nove, #seis, #tres{
-left: 1.1%;
+
 }
 
 .delete:hover{
@@ -281,3 +263,4 @@ left: 1.1%;
    
 
 }
+
