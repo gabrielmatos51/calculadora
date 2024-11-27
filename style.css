@@ -3,8 +3,7 @@
     padding: 0;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Rubik+Bubbles&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@900&display=swap');
+
 
 body{
     background-color: rgba(103, 237, 255, 0.534);
@@ -57,21 +56,20 @@ body{
 }
 
 #container{
-    width: 100%;
+    width: 100vw;
     border-style: none;
     overflow: auto hidden;
-    color: white;
     text-align: right;
     align-content: center;
     box-shadow: 1px 1px 3px 0px #00000056;
     background-color: rgba(40, 151, 171, 0.582);
-    overflow-x: hidden;
      z-index: 1;
      
 }
 .screen {
-    display: inline-block;
-    overflow-x: hidden;
+    display: inline-flex;
+    color: azure;
+    font-size: 200px;
 
 }
 .delete {
@@ -107,11 +105,7 @@ body{
     z-index: 2; 
     
 }
-.layoutButton2{ 
 
-}
-.layoutButton3 {
-}
 .button:hover{
 background-color: #3fa552;
 }
@@ -163,31 +157,11 @@ background-color: #3fa552;
     z-index: 2;
 }
 
-#buttonOper {
-    
-
-}
 
 .buttonOper:hover{
     background-color: #9a39f5b9;
 }
 
-
-#operMais {
-
-}
-#operMenos {
-   
-   
-}
-#operX{
-
-
-}
-
-#operDiv{
-  
-}
 
 #numIgual {
     grid-column-start: 1;
@@ -233,12 +207,8 @@ background-color: #3fa552;
 #operDiv:active{
 color:#3FE33D;
 }
-#sete, #quatro, #um {
 
-} 
-#nove, #seis, #tres{
 
-}
 
 .delete:hover{
     background-color: #af5cfd;
@@ -259,8 +229,22 @@ color:#3FE33D;
 }
 
 .screen::-webkit-scrollbar-thumb{
-	background-color: #7fffd443;
+	background-color: #edf5f243;
    
 
 }
 
+.newDiv{
+    font-size: 200px;
+}
+
+.buttonBack{
+    font-family: 'Kanit', sans-serif;
+    background-color: #ba74fbfa;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    border-radius: 6.8px;
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0);
+    border-style: none;
+    z-index: 2;
+}

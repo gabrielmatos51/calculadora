@@ -1,61 +1,128 @@
-function insert(num)
-{
-    const numero = document.getElementById('screen').innerText;
-    document.getElementById('screen').innerText = numero + num;
+async function insert(num){  
+  let tamanho = divList.length ;
+
+    // atrasa em alguns milisegundos a execução dessa função.
+    await new Promise(resolve => setTimeout(resolve, 10));
+    document.getElementById(divList[tamanho]).innerText = num;
+       
+
+    
+        
 }
-function clean()
-{
+
+    
+function clean(){
+
     document.getElementById('screen').innerHTML = "";
+    divList.length = 0
+
 }
-function back()
-{
-    const resultado = document.getElementById('screen').innerHTML;
-    document.getElementById('screen').innerHTML = resultado.substring(0, resultado.length -1);
+
+function back() {
+    const screen = document.getElementById("screen");
+    const listClass = screen.querySelectorAll(".newDiv");
+
+    if (listClass.length > 0) {
+        const tamanho = listClass[listClass.length - 1]; // Último elemento
+        screen.removeChild(tamanho); // Remove o último
+       divList.length = 0;
+       console.log(tamanho)
+       
+    }
+    
 }
+
 function calcular()
 {
-    const resultado = document.getElementById('screen').innerHTML;
+    const LocalScreen = document.getElementById('screen');
+    const divs = LocalScreen.querySelectorAll(".newDiv");
+    let resultado = "";
+    
+
+    divs.forEach(div => {
+        resultado += div.textContent.trim();
+
+    });
+
+    
+    LocalScreen.style.color = divList[divList.length -1];
+
+
+    
+   
     if(resultado)
     {
-        document.getElementById('screen').innerHTML = eval(resultado);
+        const LocalScreen = document.getElementById('screen');
+        const divs = LocalScreen.querySelectorAll(".newDiv");
+        let screenDiv = LocalScreen.textContent
+        
+       
+
+        resultado = screenDiv;
+        document.getElementById("screen").innerText = eval(resultado);
+        console.log( resultado = screenDiv)
+
+    
+
     }
     else
     {
      alert("Paramentros não definidos...");
+
     }
+    
+
+
 }
 
 function alterSize() {
     const screenElement = document.getElementById('container');
     const contentLength = document.getElementById('screen');
+    const divElements = document.querySelectorAll('.newDiv');
 
-    for ( let fontSize = 275 ;contentLength.offsetWidth >= screenElement.offsetWidth;fontSize = fontSize * 0.999 ){
-        screenElement.style.fontSize = fontSize + 'px';
-    };
-
-
-}
-    function adjustSize(){
-        const screenElement = document.getElementById('container');
-        screenElement.style.fontSize = 10000 + 'px';
+    // Verifica se os elementos existem
+    if (!screenElement || !contentLength) {
+        console.error("Elementos 'container' ou 'screen' não encontrados.");
+        return;
     }
-    
+
+    // Ajusta a fonte se o conteúdo exceder o tamanho do container
+    for(let font = 275; contentLength.clientWidth > screenElement.clientWidth; font = font * 0.999) {
+        
+        // Itera sobre as divs para ajustar o tamanho da fonte
+        divElements.forEach(element => {
+            element.style.fontSize = font + 'px';
+           
+        });
+    }
+}
+
+function adjustSize() {
+   
+    if(contentLength.clientWidth < screenElement.clientWidth){ 
+        const divElements = document.querySelectorAll('.newDiv');
+        // Define um tamanho de fonte inicial muito grande
+        divElements.forEach(element => {
+        element.style.fontSize = '1000px';
+        console.log( element.style.fontSize = '1000px')
+    });}
+}
 
 
-//Initial call to set the font size when the page loads
+// Ajusta a fonte ao carregar a página
+document.addEventListener('DOMContentLoaded', () => {
     alterSize();
-
-
-
     adjustSize();
+});
 
-
-// Adjust font size on window resize
+// Ajusta a fonte ao redimensionar a janela
 window.addEventListener('resize', alterSize);
 
-// Adjust font size on content change
-new MutationObserver(alterSize).observe(document.getElementById('screen'), { characterData: true, childList: true, subtree: true });
-// Initial call to set the font size when the page loads
-alterSize();
-
+// Ajusta a fonte quando o conteúdo muda
+ screenElemen = document.getElementById('screen');
+if (screenElemen) {
+    new MutationObserver(() => {
+        alterSize();
+    }).observe(screenElemen, { characterData: true, childList: true, subtree: true });
+}
  

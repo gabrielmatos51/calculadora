@@ -36,13 +36,13 @@
                 <button class="button" id="dois"   onclick="insert('2')">2</button>
                 <button class="button" id="tres" onclick="insert('3')">3</button>
                 <button class="button" id="numRemove"   onclick="clean()">C</button>
-                <button class="button" id="numZero"    onclick="insert('0')">0</button>
-                 <button class="button" id="tres" onclick="insert(',')">,</button>
+                <button class="button" id="Zero"    onclick="insert('0')">0</button>
+                 <button class="button" id="virgula" onclick="insert('.')">,</button>
                 <button class="button" id="numIgual" onclick="calcular()">=</button>
                
             </div>
             <div class="oper" id="oper">
-                    <button class="buttonOper" onmousedown="adjustSize()"  onclick="back()">&#9003;</button>
+                    <button class="buttonBack" oninput="adjustSize()"  onclick="back()">&#9003;</button>
                     <button class="buttonOper" id="operMais" onclick="insert('+')">+</button>
                     <button class="buttonOper" id="operMenos"  onclick="insert('-')">-</button>
                     <button class="buttonOper" id="operX"  onclick="insert('*')">&#215;</button>
@@ -58,6 +58,7 @@
        
        
     </div>
+    <script src="randomNumber.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
