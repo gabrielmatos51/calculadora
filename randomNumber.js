@@ -1,71 +1,38 @@
- const hex = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"];
-  const divList = [];
+const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+const divList = [];
 
-//Button that change color of number on screen.
- const btn = document.querySelectorAll(".button");
-const btnOp = document.querySelectorAll(".buttonOper");
+// Referenciar elementos
+const btns = [...document.querySelectorAll(".button"), ...document.querySelectorAll(".buttonOper")];
 
- btn.forEach(function(button) {
-    button.addEventListener("click", function(){
-    
-   const newDiv = document.createElement("div");
-
-    document.getElementById("screen").appendChild(newDiv);
-
-    
+// Função para gerar cor hexadecimal aleatória
+function generateHexColor() {
     let hexColor = "#";
-    for ( let i = 0; i < 6; i++) {
-
+    for (let i = 0; i < 6; i++) {
         hexColor += hex[getRandomNumber()];
-      
-    };
+    }
+    return hexColor;
+}
 
-    newDiv.className = 'newDiv';
-    newDiv.style.color = hexColor;
-    newDiv.id = hexColor
-    divList.push(hexColor);
-    
-
-   
-    
-
-    });
-
-});
-
-
-
-btnOp.forEach(function(buttonOp) {
-    buttonOp.addEventListener("click", function(){
-    
+// Função para adicionar um novo div
+function addNewDiv(color) {
     const newDiv = document.createElement("div");
+    newDiv.className = "newDiv";
+    newDiv.style.color = color;
+    newDiv.id = color;
 
-    document.getElementById("screen").appendChild(newDiv);
+    document.getElementById("screen")?.appendChild(newDiv); // Adicionar apenas se o elemento existir
+    divList.push(color);
+}
 
-    
-    let hexColor = "#";
-    for ( let i = 0; i < 6; i++) {
-
-        hexColor += hex[getRandomNumber()];
-      
-    };
-
-    newDiv.className = 'newDiv';
-    newDiv.style.color = hexColor;
-    newDiv.id = hexColor
-    divList.push(hexColor);
-    
-
-   
-    
-
-    });
-
-});
-
-
-
-
+// Função para obter número aleatório
 function getRandomNumber() {
     return Math.floor(Math.random() * hex.length);
-};
+}
+
+// Adicionar evento a todos os botões
+btns.forEach(button => {
+    button.addEventListener("click", function () {
+        const color = generateHexColor();
+        addNewDiv(color);
+    });
+});

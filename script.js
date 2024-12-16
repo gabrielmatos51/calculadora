@@ -23,16 +23,14 @@ function back() {
     const listClass = screen.querySelectorAll(".newDiv");
 
     if (listClass.length > 0) {
-        const tamanho = listClass[listClass.length - 1]; // Último elemento
-        screen.removeChild(tamanho); // Remove o último
-       divList.length = 0;
-       console.log(tamanho)
-       
+        const lastDiv = listClass[listClass.length - 1];
+        screen.removeChild(lastDiv); // Remove o último
+        divList.pop(); // Remove a última cor da lista
     }
-    
 }
 
-function calcular()
+
+/*function calcular()
 {
     const LocalScreen = document.getElementById('screen');
     const divs = LocalScreen.querySelectorAll(".newDiv");
@@ -73,7 +71,48 @@ function calcular()
     
 
 
+}*/
+
+  async function calcular() {
+    const LocalScreen = document.getElementById('screen');
+    const divs = LocalScreen.querySelectorAll(".newDiv");
+    let resultado = "";
+
+    // Concatena o conteúdo de todas as divs
+    divs.forEach(div => {
+        resultado += div.textContent.trim();
+    });
+
+    if (resultado) {
+        try {
+            const calculado = eval(resultado); // Use com cuidado
+
+            const divs = LocalScreen.querySelectorAll("div");
+
+            await new Promise(resolve => setTimeout(resolve, 10));
+            
+            divs.forEach((div,index) =>{
+                if(index >= 0) {
+                    div.remove();
+                }
+            });
+
+            divList.splice(0, divList.length - 1);
+
+            document.getElementById(divList[0]).innerText = calculado;
+            document.getElementById(divList[0]).style.color = divList[0];
+
+        } catch (e) {
+            alert("Erro ao calcular: parâmetros inválidos.");
+            
+        }
+    } else {
+        alert("Parâmetros não definidos...");
+        
+    }
 }
+
+
 
 function alterSize() {
     const screenElement = document.getElementById('container');
@@ -103,8 +142,7 @@ function adjustSize() {
         const divElements = document.querySelectorAll('.newDiv');
         // Define um tamanho de fonte inicial muito grande
         divElements.forEach(element => {
-        element.style.fontSize = '1000px';
-        console.log( element.style.fontSize = '1000px')
+        element.style.fontSize = '1000' + 'px';
     });}
 }
 
